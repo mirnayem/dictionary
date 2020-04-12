@@ -4,7 +4,7 @@
 
  @foreach ($category_array as $category_name => $words) 
     <hr>
-    <h1 class="text-center"> {{$category_name}} </h1>
+    <h1 class="text-center"> {{strtoupper(str_replace('-', ' ', $category_name))}} </h1>
     <hr>
   <div class="row text-center">
    @foreach($words as $word_name => $word)
