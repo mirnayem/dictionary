@@ -16,7 +16,7 @@ class VocabularyController extends Controller
         {
             $catUrl = $categories->children(0)->children(0)->href;
             
-            $category = HtmlDomParser::file_get_html("https://learnenglish.britishcouncil.org/$catUrl");
+            $category = HtmlDomParser::file_get_html("https://learnenglish.britishcouncil.org/$catUrl", false, null, 0);
             
             $find_xmls = $category->find("div.field.field-name-body.field-type-text-with-summary.field-label-hidden div.field-items div.field-item.even",0);
             
@@ -71,7 +71,7 @@ class VocabularyController extends Controller
             $catUrl = $categories->children(0)->children(0)->href;
             if($catUrl == "/vocabulary/beginner-to-pre-intermediate/$cat")
             {
-            $category = HtmlDomParser::file_get_html("https://learnenglish.britishcouncil.org/$catUrl");
+            $category = HtmlDomParser::file_get_html("https://learnenglish.britishcouncil.org/$catUrl",false,null,0);
             
             $find_xmls = $category->find("div.field.field-name-body.field-type-text-with-summary.field-label-hidden div.field-items div.field-item.even",0);
             
