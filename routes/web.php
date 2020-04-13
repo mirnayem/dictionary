@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
@@ -37,7 +37,7 @@ Route::get('/target','ApiController@target');
 
 Route::get('/words','VocabularyController@words');
 Route::get('/words/{cat}', 'VocabularyController@words_by_category');
-Route::get('/categories','VocabularyController@categories');
+Route::get('/','VocabularyController@categories');
 
 Route::get('/storecategories' , 'CategoryController@store');
 
