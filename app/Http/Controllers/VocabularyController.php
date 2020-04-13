@@ -54,7 +54,8 @@ class VocabularyController extends Controller
     
     public function categories()
     {
-        $categories = HtmlDomParser::file_get_html("https://learnenglish.britishcouncil.org/vocabulary/beginner-to-pre-intermediate");
+        $url = "https://learnenglish.britishcouncil.org/vocabulary/beginner-to-pre-intermediate";
+        $categories = HtmlDomParser::file_get_html($url);
         
         return view('categories',compact('categories'));
         
