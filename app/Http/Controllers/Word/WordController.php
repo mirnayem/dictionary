@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Word;
 use App\Category;
+use Illuminate\Support\Str;
 
 class WordController extends Controller
 {
@@ -50,7 +51,7 @@ class WordController extends Controller
         $word = new Word();
 
         $word->name = $request->name;
-        $word->category_name = $request->category_name;
+        $word->category_name = Str::slug($request->category_name);
         $word->image = $request->image;
         $word->audio = $request->audio;
         $word->save();
@@ -77,7 +78,8 @@ class WordController extends Controller
     public function edit($id)
     {
         $word = Word::findOrFail($id);
-        return view('words.edit',compact('word'));
+        $categories = Category::all();
+        return view('words.edit',compact('word','categories'));
     }
 
     /**
@@ -92,7 +94,7 @@ class WordController extends Controller
         $word = Word::findOrFail($id);
 
         $word->name = $request->name;
-        $word->category_name = $request->category_name;
+        $word->category_name = Str::slug($request->category_name);
         $word->image = $request->image;
         $word->audio = $request->audio;
         $word->update();

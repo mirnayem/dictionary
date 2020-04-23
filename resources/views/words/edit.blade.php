@@ -27,7 +27,7 @@
                 {!! Form::label('categories','Categories:') !!}
                 <select class="form-control" id="addcategory"  name="category_name">
                     @foreach($categories as $category)
-                    <option value="{{$category->name}}"> {{$category->name}} </option>
+                <option value=" {{$category->name}}" > {{$category->name}} </option>
                     @endforeach
                 </select>
                 {!! $errors->first('categories', '<p class="help-block text-danger ">:message</p>') !!}
