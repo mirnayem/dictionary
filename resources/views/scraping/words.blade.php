@@ -37,39 +37,5 @@
   
   @endforeach
 
-  
-{{-- <h1 class="text-center"> {{$category_name}} </h1>
-<hr>
-
-<div class="row">
-  
-
-  @foreach ($words->find('SimpleQuestionItem') as $answer)
-
-      <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-between py-1">
-
-        <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="https:{{$answer->children(1)->children(1)->innertext}}" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title text-center">{{$answer->children(3)->innertext}}</h5>
-           
-          </div>
- 
-          <div class="card-body">
-
-            <audio controls="controls" style="width:220px" class=" justify-content-center">
-              <source src="{{ $answer->children(0)->children(1)->innertext}}" type="audio/mpeg">   
-            </audio>
-            
-          </div>
-        </div>
-
-      </div>
-  @endforeach
-
-</div> --}}
-
-
-
       
 @endsection

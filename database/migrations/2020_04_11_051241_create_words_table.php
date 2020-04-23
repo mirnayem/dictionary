@@ -15,7 +15,7 @@ class CreateWordsTable extends Migration
     {
         Schema::create('words', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id');
+            $table->string('category_name');
             $table->string('name');
             $table->string('image');
             $table->string('audio');

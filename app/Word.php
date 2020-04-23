@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Word extends Model
 {
-    protected $guarded = [];
+    protected $fillable = ['name','image','audio'];
 }

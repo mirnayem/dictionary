@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 // translate routes
 
 
@@ -33,12 +34,30 @@ Route::get('/languages','ApiController@languages');
 Route::get('/target','ApiController@target');
 
 
-// vocabulary routes
+// vocabulary routes scraping
 
-Route::get('/words','VocabularyController@words');
-Route::get('/words/{cat}', 'VocabularyController@words_by_category');
-Route::get('/','VocabularyController@categories');
+Route::get('parsing/words','VocabularyController@words');
+Route::get('parsing/words/{cat}', 'VocabularyController@words_by_category');
+Route::get('parsing/','VocabularyController@categories');
 
-Route::get('/storecategories' , 'CategoryController@store');
 
+// store category
+Route::get('parsing/storecategories' , 'VocabularyController@storecategory');
+// store word
+Route::get('parsing/storewords' , 'VocabularyController@storeword');
+
+
+// homepage 
+
+Route::view('/', 'homepage')->name('vocabulary');
+
+//Word Route
+
+Route::resource('words', 'Word\WordController');
+
+
+//Category Route
+
+Route::resource('categories', 'Category\CategoryController');
+Route::get('categories/word/{category_name}', 'Category\CategoryController@category_word');
 
