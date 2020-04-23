@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Sunra\PhpSimple\HtmlDomParser;
 use App\Word;
+use App\Category;
 
 class VocabularyController extends Controller
 {
