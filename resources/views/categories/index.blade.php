@@ -6,7 +6,7 @@
  
             @foreach($categories as $category)
              
-             <h4 class="p-2"><span class="badge p-2"> <a href="/categories/word/{{Str::slug($category->name)}}">{{$category->name}}</a></span></h4>
+             <h4 class="p-2"><span class="badge p-2"> <a href="/categories/word/{{Str::slug($category->name)}}">{{Str::upper($category->name)}}</a></span></h4>
            
            @endforeach
 

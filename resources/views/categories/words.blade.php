@@ -2,7 +2,7 @@
 
 @section('content')
 <hr>
-<h1 class="text-center"> {{strtoupper(str_replace('-', ' ', $category_name))}} </h1>
+<h1 class="text-center"> {{Str::title(str_replace('-', ' ', $category_name))}} </h1>
 <hr>
   <div class="row text-center">
 
