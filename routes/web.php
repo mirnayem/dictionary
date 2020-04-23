@@ -28,11 +28,20 @@ Route::get('/home', 'HomeController@index')->name('home');
 // translate routes
 
 
-Route::get('/translate','ApiController@translate');
-Route::get('/detect','ApiController@detect');
-Route::get('/languages','ApiController@languages');
-Route::get('/target','ApiController@target');
+// Route::get('/translate','ApiController@translate');
+// Route::get('/detect','ApiController@detect');
+// Route::get('/languages','ApiController@languages');
+// Route::get('/target','ApiController@target');
 
+
+
+
+
+// Admin Routes
+
+Route::get('/admin','Admin\AdminController@index')->name('dashboard');
+Route::get('/admin/word/{categroy_name}','Admin\AdminController@categoryWord');
+Route::get('/admin/words','Admin\AdminController@allWords')->name('adminWord');
 
 // vocabulary routes scraping
 

@@ -40,9 +40,10 @@ class WordController extends Controller
      */
     public function store(Request $request)
     {
+       
         $this->validate($request,[
            'name' => 'required ',
-           'categories' => 'required',
+           'category_name' => 'required',
         ]);
 
 
